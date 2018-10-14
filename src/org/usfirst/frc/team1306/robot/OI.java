@@ -1,5 +1,7 @@
 package org.usfirst.frc.team1306.robot;
 
+import org.usfirst.frc.team1306.robot.subsystems.Drivetrain.DriveMode;
+import org.usfirst.frc.team1306.robot.drivetrain.Switch;
 import org.usfirst.frc.team1306.robot.triggers.ControllerButton;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
@@ -27,9 +29,9 @@ public class OI {
 		secondaryController = new XboxController(RobotMap.SECONDARY_PORT);
 		
 		//Declares and maps buttons to xbox controller buttons for primary controller
-		Button pbuttonA = new JoystickButton(primaryController, ControllerButton.A.value); 
-		Button pbuttonB = new JoystickButton(primaryController, ControllerButton.B.value); 
-		Button pbuttonX = new JoystickButton(primaryController, ControllerButton.X.value);
+//		Button pbuttonA = new JoystickButton(primaryController, ControllerButton.A.value); 
+//		Button pbuttonB = new JoystickButton(primaryController, ControllerButton.B.value); 
+//		Button pbuttonX = new JoystickButton(primaryController, ControllerButton.X.value);
 //		Button pbuttonY = new JoystickButton(primaryController, ControllerButton.Y.value);
 		Button pbuttonLB = new JoystickButton(primaryController, ControllerButton.LB.value);
 		Button pbuttonRB = new JoystickButton(primaryController, ControllerButton.RB.value); 
@@ -41,11 +43,11 @@ public class OI {
 //		Button primaryDPadDown = new DPadPress(primaryController, DPadDirection.DOWN);
 		
 		//Declares and maps buttons to xbox controller buttons for secondary controller
-		Button sbuttonA = new JoystickButton(secondaryController, ControllerButton.A.value); 
-		Button sbuttonB = new JoystickButton(secondaryController, ControllerButton.B.value);
-		Button sbuttonX = new JoystickButton(secondaryController, ControllerButton.X.value); 
+//		Button sbuttonA = new JoystickButton(secondaryController, ControllerButton.A.value); 
+//		Button sbuttonB = new JoystickButton(secondaryController, ControllerButton.B.value);
+//		Button sbuttonX = new JoystickButton(secondaryController, ControllerButton.X.value); 
 //		Button sbuttonY = new JoystickButton(secondaryController, ControllerButton.Y.value);
-		Button sbuttonLB = new JoystickButton(secondaryController, ControllerButton.LB.value);
+//		Button sbuttonLB = new JoystickButton(secondaryController, ControllerButton.LB.value);
 //		Button sbuttonRB = new JoystickButton(secondaryController, ControllerButton.RB.value);
 //		Button sbuttonStart = new JoystickButton(secondaryController,ControllerButton.START.value);
 //		Button sbuttonBack = new JoystickButton(secondaryController, ControllerButton.BACK.value);
@@ -55,7 +57,8 @@ public class OI {
 //		Button secondaryDPadDown = new DPadPress(secondaryController, DPadDirection.DOWN);
 		
 		/** @Primary_Controls */
-
+		pbuttonRB.whenPressed(new Switch(DriveMode.MECH));
+		pbuttonLB.whenPressed(new Switch(DriveMode.TANK));
 		/** @Secondary_Controls */
 	}
 	

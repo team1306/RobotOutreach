@@ -1,7 +1,11 @@
 package org.usfirst.frc.team1306.robot.commands;
 
 import org.usfirst.frc.team1306.robot.Constants;
-import org.usfirst.frc.team1306.robot.subsystems.Drivetrain.Side;
+import org.usfirst.frc.team1306.robot.OI;
+import org.usfirst.frc.team1306.robot.OI.Axis;
+import org.usfirst.frc.team1306.robot.OI.Controller;
+import org.usfirst.frc.team1306.robot.OI.Joystick;
+
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
@@ -16,18 +20,8 @@ public class SmartDashboardUpdate extends CommandBase {
 	
 	@Override
 	protected void execute() {
-		
-		if(Constants.GYRO_DEBUG) {
-			SmartDashboard.putNumber("Gyro-Yaw", drivetrain.getGyroAngle());
-		}
-		
-		if(Constants.DRIVETRAIN_DEBUG) {
-			SmartDashboard.putNumber("LeftSide-Position:", drivetrain.getEncoderPos(Side.LEFT));
-			SmartDashboard.putNumber("RightSide-Position:", drivetrain.getEncoderPos(Side.RIGHT));
-//			SmartDashboard.putNumber("LeftSide-AdjustPos:", Math.abs(drivetrain.getEncoderPos(Side.LEFT)/1024)*12.5663);
-//			SmartDashboard.putNumber("RightSide-AdjustPos:", Math.abs(drivetrain.getEncoderPos(Side.RIGHT)/1024)*12.5663);
-			SmartDashboard.putNumber("LeftSide-Velocity:", drivetrain.getEncoderVel(Side.LEFT));
-			SmartDashboard.putNumber("RightSide-Velocity:", drivetrain.getEncoderVel(Side.RIGHT));
+		if (Constants.DRIVETRAIN_DEBUG) {
+			SmartDashboard.putNumber("Left Joystick", OI.getJoyVal(Controller.P, Joystick.L, Axis.Y));
 		}
 	}
 

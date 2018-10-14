@@ -8,23 +8,15 @@ public class Constants {
 
 	/** Subsystem Control (Switching to false will disable all output for that subsystem) */
 	public final static boolean DRIVETRAIN_ENABLED = true;
-	public final static boolean CUBETAKE_ENABLED = true;
-	public final static boolean ELEVATOR_ENABLED = true; //If false, brake will still clamp down.
+	public final static boolean CATAPULT_ENABLED = true;
 	
 	/** SmartDashboard Debug Modes */
-	public static final boolean DRIVETRAIN_DEBUG = false;
+	public static final boolean DRIVETRAIN_DEBUG = true;
 	public static final boolean GYRO_DEBUG = true;
-	public static final boolean CUBETAKE_DEBUG = false;
-	public static final boolean ELEVATOR_DEBUG =  true;
 	
 	/** OI Constants */
 	public final static double DEADBAND = 0.15; //Joystick and trigger deadband
 	public final static double JOYSTICK_MULTIPLIER = 1.0; //Joystick inputs raised to this power
-	
-	/** Autonomous Constants*/
-	public final static boolean FMS_TRICK = false; //Whether or not we should use false game-message (practice matches)
-	public final static String FMS_TRICK_SWITCH_LOCATION = "L"; //What side do we own if we're using false game-message
-	public final static String FMS_TRICK_SCALE_LOCATION = "L"; //What side do we own if we're using false game-message
 	
 	/** Drivetrain Constants */
 	public final static double TRACK_WIDTH = 24.5; //Inches
